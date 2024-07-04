@@ -5,9 +5,64 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding: 10px;
+  color: white;
+    box-sizing: border-box;
+  background-image: url('background.jpg');
+  background-position: center;
+  background-size: cover;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.flex{
+  display: flex;
 }
+
+.app{
+  width: 100%;
+  height: calc(100vh - 20px);
+}
+
+.navbar{
+  width: 20vw;
+  padding: 15px;
+  flex-direction: column;
+  background-color: rgba(33, 32, 32, 0.40);
+  backdrop-filter: blur(7px);
+}
+
+.navbar-name{
+  padding: 10px;
+  margin: 2vh auto 3vh auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.navbar-search{
+  margin: 2vh auto;
+  padding: 6px 10px;
+  width: calc(20vw * 0.95);
+  box-sizing: border-box;
+}
+
+.navbar-groups{
+  width: 95%;
+  border-top: 1px solid rgba(255, 255, 255, 0.7);
+  margin: 2vh auto 0 auto;
+  padding-top: 15px;
+}
+.navbar-groups>div{
+  width: 100%;
+  padding: 15px 30px;
+}
+
+.navbar-bottom-menu{
+  width: 95%;
+  margin: auto auto 2vh auto;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+
+
+

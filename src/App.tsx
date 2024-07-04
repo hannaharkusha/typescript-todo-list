@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { createContext, useContext, useState } from 'react';
+import Navbar from "./components/navbar";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// Define the shape of the context data
+interface DataContextProps {
+  customGroups: string[];
+  addCustomGroup: (group: string) => void;
 }
+
+// Create the context with initial value
+const initialDataContext: DataContextProps = {
+  customGroups: ['Group 1', 'Group 2'],
+  addCustomGroup: (group: string) => {}, // Placeholder function
+};
+
+// Create the context
+export const DataContext = createContext<DataContextProps>(initialDataContext);
+
+const App: React.FC = () => {
+  const [customGroups, setCustomGroups] = useState<string[]>(initialDataContext.customGroups);
+
+  const addCustomGroup = (group: string) => {
+    setCustomGroups([...customGroups, group]);
+  };
+
+  return (
+      <div className="app flex">
+        <DataContext.Provider value={{ customGroups, addCustomGroup }}>
+          <Navbar name="John" surname="Doe" email="john.doe@example.com" />
+        </DataContext.Provider>
+      </div>
+  );
+};
 
 export default App;
