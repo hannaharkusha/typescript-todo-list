@@ -1,5 +1,7 @@
 import React, { useContext } from "react";
 import { DataContext } from "../App";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFolderOpen } from '@fortawesome/free-solid-svg-icons';
 
 interface NavbarProps {
     name: string;
@@ -16,8 +18,11 @@ const Navbar: React.FC<NavbarProps> = ({ name, surname, email }) => {
 
     return (
         <div className='navbar flex'>
-            <div className="navbar-name">{name} {surname}</div>
-            <input className='navbar-search' type="text" placeholder="Search..." />
+            <div className="navbar-name flex">
+                <div>{name} {surname}</div>
+                <div>{email}</div>
+            </div>
+            <input className='navbar-search' type="text" />
             <div className="navbar-groups">
                 <div>My Day</div>
                 <div>Important</div>
@@ -29,8 +34,8 @@ const Navbar: React.FC<NavbarProps> = ({ name, surname, email }) => {
                 ))}
             </div>
             <div className="navbar-bottom-menu flex">
-                <div>New list</div>
-                <div>Group</div>
+                <div>+ New list</div>
+                <div><FontAwesomeIcon icon={faFolderOpen} /></div>
             </div>
         </div>
     );
