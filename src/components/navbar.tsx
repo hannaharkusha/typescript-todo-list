@@ -7,14 +7,11 @@ interface NavbarProps {
     name: string;
     surname: string;
     email: string;
+    setOption: (option: string) => void;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ name, surname, email }) => {
+const Navbar: React.FC<NavbarProps> = ({ name, surname, email, setOption }) => {
     const { customGroups, addCustomGroup } = useContext(DataContext);
-
-    // const handleAddGroup = (group:string) => {
-    //     addCustomGroup(group);
-    // };
 
     return (
         <div className='navbar flex'>
@@ -24,22 +21,22 @@ const Navbar: React.FC<NavbarProps> = ({ name, surname, email }) => {
             </div>
             <input className='navbar-search' type="text" />
             <div className="navbar-groups">
-                <div className='light-hover flex'><div className='line'></div>
-                    <FontAwesomeIcon style={{color: '#c311c5'}} icon={faSun}/>
+                <div className='light-hover flex' onClick={()=>setOption('My day')}><div className='line'></div>
+                    <FontAwesomeIcon  icon={faSun}/>
                     <div>My Day</div>
                 </div>
-                <div className='light-hover flex'><div className='line'></div>
-                    <FontAwesomeIcon icon={faStar} style={{color: '#00c1be'}}/>
+                <div className='light-hover flex'  onClick={()=>setOption('Important')}><div className='line'></div>
+                    <FontAwesomeIcon icon={faStar} />
                     <div>Important</div>
                 </div>
-                <div className='light-hover flex'><div className='line'></div>
-                    <FontAwesomeIcon icon={faListCheck} style={{color: '#e82e5c'}}/>
+                <div className='light-hover flex'  onClick={()=>setOption('Tasks')}><div className='line'></div>
+                    <FontAwesomeIcon icon={faListCheck} />
                     <div>Tasks</div>
                 </div>
             </div>
             <div className="navbar-groups">
                 {customGroups.map((group, index) => (
-                    <div className='light-hover flex' key={index}>
+                    <div className='light-hover flex' key={index}  onClick={()=>setOption(group)}>
                         <div className='line'></div>
                         <FontAwesomeIcon icon={faBarsStaggered} />
                         <div>{group}</div>

@@ -5,12 +5,13 @@ body {
   font-family: "Nunito Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding: 10px;
+  padding: 15px;
   color: whitesmoke;
     box-sizing: border-box;
-  background-image: url('back2.jpg');
-  background-position: center;
-  background-size: cover;
+  /*background-image: url('back2.jpg');*/
+  /*background-position: center;*/
+  /*background-size: cover;*/
+  background: linear-gradient(90deg, #FC466B 0%, #3F5EFB 100%);
 }
 
 .flex{
@@ -19,21 +20,24 @@ body {
 
 .app{
   width: 100%;
-  height: calc(100vh - 20px);
+  height: calc(100vh - 30px);
+  gap: 20px;
 }
 
 .navbar{
   width: 20vw;
   padding: 5px;
   flex-direction: column;
-  background-color: rgba(33, 32, 32, 0.40);
+  background-color: rgba(33, 32, 32, 0.5);
   backdrop-filter: blur(7px);
+  border-radius: 10px;
+  border: 1px solid rgba(33, 32, 32, 0.5)
 }
 
 .navbar-name{
   padding: 10px 20px;
   margin: 2vh auto;
-  width: 100%;
+  width: 95%;
   box-sizing: border-box;
   flex-direction: column;
   gap: 10px;
@@ -51,7 +55,7 @@ body {
 
 .navbar-groups{
   width: 95%;
-  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-top: 1px solid rgba(33, 32, 32, 0.5);
   margin: 2vh auto 0 auto;
   padding-top: 15px;
 
@@ -82,7 +86,7 @@ body {
 }
 
 .light-hover:hover{
-  background-color: rgb(216, 233, 237, 0.1);
+  background-color: rgba(14, 14, 14, 0.3);
   border-radius: 5px;
   cursor: pointer;
 }
@@ -103,6 +107,64 @@ body {
 
 }
 
+.list{
+  flex-grow: 1;
+  backdrop-filter: blur(7px);
+  flex-direction: column;
+  border-radius: 10px;
+  border: 1px solid rgba(33, 32, 32, 0.5);
+  background-color: rgba(33, 32, 32, 0.4);
+}
+
+.list-top{
+  justify-content: space-between;
+  padding: 25px 50px;
+  align-items: center;
+  border-bottom: 1px solid rgba(33, 32, 32, 0.5);
+  background-color: rgba(33, 32, 32, 0.4);
+  border-radius: 10px 10px 0 0;
+}
+
+.list-top>div:last-child{
+  padding: 10px;
+}
+
+.list-top>div:first-child{
+  font-size: 28px;
+}
+
+.list-content{
+  flex-grow: 1;
+}
+
+.list-task-input{
+  background-color: rgba(33, 32, 32, 0.4);
+  width: 90%;
+  margin: auto auto 2vh auto;
+  border-radius: 5px;
+}
+
+.list-task-input input{
+  background: none;
+  border: none;
+  outline: none;
+  line-height: 24px;
+  color: whitesmoke;
+  width: 100%;
+  padding: 15px 30px;
+}
+
+.list-tasks{
+  height: 75%;
+  margin-top: 5vh;
+}
+
+.list-tasks>div{
+  padding: 15px 50px;
+  border-bottom: 1px solid rgba(33, 32, 32, 0.5);
+  width: 85%;
+  margin: 0 auto;
+}
 
 
 
