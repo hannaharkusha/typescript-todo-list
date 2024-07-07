@@ -3,35 +3,42 @@
 body {
   margin: 0;
   font-family: "Nunito Sans", sans-serif;
+  font-weight: 300;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding: 15px;
+  padding: 15px 15px 15px 0;
   color: whitesmoke;
     box-sizing: border-box;
   /*background-image: url('back2.jpg');*/
   /*background-position: center;*/
   /*background-size: cover;*/
-  background: linear-gradient(90deg, #FC466B 0%, #3F5EFB 100%);
+  /*background: linear-gradient(90deg, #FC466B 0%, #3F5EFB 100%);*/
+  background-color: #222222;
 }
+
 
 .flex{
   display: flex;
 }
 
+.column{
+  flex-direction: column;
+}
+
 .app{
   width: 100%;
   height: calc(100vh - 30px);
-  gap: 20px;
 }
 
 .navbar{
   width: 20vw;
-  padding: 5px;
+  padding: 20px;
   flex-direction: column;
-  background-color: rgba(33, 32, 32, 0.5);
-  backdrop-filter: blur(7px);
+  /*background-color: rgba(33, 32, 32, 0.5);*/
+  /*backdrop-filter: blur(7px);*/
   border-radius: 10px;
-  border: 1px solid rgba(33, 32, 32, 0.5)
+  box-sizing: border-box;
+  /*border: 1px solid rgba(33, 32, 32, 0.5)*/
 }
 
 .navbar-name{
@@ -46,7 +53,7 @@ body {
 .navbar-search{
   margin: 2vh auto;
   padding: 6px 12px;
-  width: calc(20vw * 0.9);
+  width: calc(18vw * 0.9);
   box-sizing: border-box;
   border-radius: 18px;
   background-color: rgb(216, 233, 237, 0.15);
@@ -86,25 +93,18 @@ body {
 }
 
 .light-hover:hover{
-  background-color: rgba(14, 14, 14, 0.3);
+  background-color: rgba(68, 67, 67, 0.3);
   border-radius: 5px;
   cursor: pointer;
 }
 
 .line{
-  background: none;
   width: 1.5%;
   height: 27px;
   border-radius: 2px;
   position: absolute;
   left: 1%;
-}
-
-
-
-.navbar-groups>div:hover .line{
   background-color: rgba(255, 255, 255, 0.95);
-
 }
 
 .list{
@@ -112,8 +112,10 @@ body {
   backdrop-filter: blur(7px);
   flex-direction: column;
   border-radius: 10px;
-  border: 1px solid rgba(33, 32, 32, 0.5);
-  background-color: rgba(33, 32, 32, 0.4);
+  /*border: 1px solid rgba(33, 32, 32, 0.5);*/
+  /*background-color: rgba(33, 32, 32, 0.4);*/
+  background-image: url('background.jpg');
+  background-size: cover;
 }
 
 .list-top{
@@ -139,9 +141,12 @@ body {
 
 .list-task-input{
   background-color: rgba(33, 32, 32, 0.4);
+  backdrop-filter: blur(5px);
   width: 90%;
   margin: auto auto 2vh auto;
   border-radius: 5px;
+  box-sizing: border-box;
+
 }
 
 .list-task-input input{
@@ -160,10 +165,23 @@ body {
 }
 
 .list-tasks>div{
-  padding: 15px 50px;
-  border-bottom: 1px solid rgba(33, 32, 32, 0.5);
-  width: 85%;
-  margin: 0 auto;
+  padding: 15px 30px;
+  width: 90%;
+  margin: 1.5vh auto;
+  background-color: rgba(38, 38, 38, 0.4);
+  backdrop-filter: blur(5px);
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.date{
+  margin-top: 1vh;
+  font-size: 15px;
+  color: #c7c5c5;
+}
+
+.option{
+  font-weight: 400;
 }
 
 
