@@ -122,7 +122,7 @@ body {
   justify-content: space-between;
   padding: 25px 50px;
   align-items: center;
-  border-bottom: 1px solid rgba(33, 32, 32, 0.5);
+  border-bottom: 1px solid rgba(107, 104, 104, 0.5);
   background-color: rgba(33, 32, 32, 0.4);
   border-radius: 10px 10px 0 0;
 }

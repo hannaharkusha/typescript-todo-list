@@ -49,7 +49,7 @@ const App: React.FC = () => {
   const [customGroups, setCustomGroups] = useState<string[]>(initialDataContext.customGroups);
   const [groups, setGroups] = useState<[string, IconDefinition][]>(initialDataContext.groups);
 
-    const [option, setOption] = useState <string>('');
+    const [option, setOption] = useState <string>('My day');
   const [data, setData] = useState<string[][]>(initialDataContext.data)
   const addCustomGroup = (group: string) => {
     setCustomGroups([...customGroups, group]);
