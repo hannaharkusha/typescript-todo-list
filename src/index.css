@@ -65,7 +65,6 @@ body {
   border-top: 1px solid rgba(33, 32, 32, 0.5);
   margin: 2vh auto 0 auto;
   padding-top: 15px;
-
 }
 
 .navbar-groups>div{
@@ -182,6 +181,18 @@ body {
 
 .option{
   font-weight: 400;
+}
+
+.new-list-input{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 2px 0;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: #c7c5c5;
+  font-size: 16px;
+  font-style: inherit;
 }
 
 
