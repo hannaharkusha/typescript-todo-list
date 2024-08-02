@@ -195,5 +195,18 @@ body {
   font-style: inherit;
 }
 
+.context-menu{
+  gap: 3px;
+  border-radius: 5px;
+  padding: 10px 15px;
+
+}
+
+.context-menu-option{
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 5px;
+}
+
 
 

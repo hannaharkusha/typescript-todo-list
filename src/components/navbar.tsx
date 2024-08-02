@@ -4,6 +4,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faBarsStaggered, faFolderOpen, faListCheck, faStar, faSun} from '@fortawesome/free-solid-svg-icons';
 import Option from "./option";
 import NewListInput from "./newListInput";
+import {Origin} from "../types/Origin";
 
 interface NavbarProps {
     name: string;
@@ -21,9 +22,13 @@ const Navbar: React.FC<NavbarProps> = ({name, surname, email, setOption, option}
 
     const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if (e.key === 'Enter') {
-            customGroups.push(newList);
-            setNewListMenuOpened(false);
-            setNewList('');
+            if (newList.trim() === '') {
+                setNewListMenuOpened(false);
+            } else {
+                customGroups.push(newList);
+                setNewListMenuOpened(false);
+                setNewList('');
+            }
         }
     };
 
@@ -36,15 +41,15 @@ const Navbar: React.FC<NavbarProps> = ({name, surname, email, setOption, option}
             <input className='navbar-search' type="text"/>
             <div className="navbar-groups">
                 {groups.map(group => (
-                    <Option title={group[0]} icon={group[1]} setOption={setOption} option={option}/>
+                    <Option title={group[0]} icon={group[1]} setOption={setOption} option={option} type={Origin.SYSTEM}/>
                 ))}
             </div>
             <div className="navbar-groups">
                 {customGroups.map((group, index) => (
-                    <Option icon={faBarsStaggered} title={group} setOption={setOption} option={option}/>
+                    <Option icon={faBarsStaggered} title={group} setOption={setOption} option={option} type={Origin.CUSTOM}/>
                 ))}
                 {newListMenuOpened && (
-                   <NewListInput newList={newList} setNewList={setNewList} handleKeyDown={handleKeyDown} />
+                    <NewListInput newList={newList} setNewList={setNewList} handleKeyDown={handleKeyDown}/>
                 )}
             </div>
             <div className="navbar-bottom-menu flex">

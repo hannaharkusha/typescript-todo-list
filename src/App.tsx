@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, {createContext, useContext, useEffect, useRef, useState} from 'react';
 import Navbar from "./components/navbar";
 import List from "./components/list";
 import {faListCheck, faStar, faSun} from "@fortawesome/free-solid-svg-icons";
@@ -49,11 +49,12 @@ const App: React.FC = () => {
   const [customGroups, setCustomGroups] = useState<string[]>(initialDataContext.customGroups);
   const [groups, setGroups] = useState<[string, IconDefinition][]>(initialDataContext.groups);
 
-    const [option, setOption] = useState <string>('My day');
+  const [option, setOption] = useState <string>('My day');
   const [data, setData] = useState<string[][]>(initialDataContext.data)
   const addCustomGroup = (group: string) => {
     setCustomGroups([...customGroups, group]);
   };
+
 
   return (
       <div className="app flex">
